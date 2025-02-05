@@ -344,6 +344,7 @@ a{
 .explore .box{
     text-align: center;
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .explore .box .img-holder{
@@ -718,8 +719,6 @@ a{
     margin: 0 0 20px;
 }
 
-
-
 .footer .box .text{
     line-height: 2;
     color: #b9b9b9;
@@ -804,8 +803,34 @@ a{
     border-top: 1px solid #444;
 }
 
-.footer .top-btn{
+.footer .top-to-bot{
     position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 99999;
+    cursor: pointer;
+    width: 32px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.5;
+}
+
+.footer .top-to-bot i{
+    color: white;
+}
+
+.footer .top-btn,
+.footer .down-btn{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #343a40;
+    border-color: #343a40;
+    border-radius: 50% !important;
 }
 
 /* end footer */
