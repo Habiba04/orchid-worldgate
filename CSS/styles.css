@@ -858,13 +858,4 @@ a{
     }
 }
 
-@keyframes bouncing {
-    0%, 10%, 20%, 50%, 80%, 100%{
-        transform: translateY(0);
-    }
-    40%, 60%{
-        transform: translateY(-15px);
-    }
-}
-
 /* end animation */
