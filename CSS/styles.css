@@ -804,6 +804,10 @@ a{
     border-top: 1px solid #444;
 }
 
+.footer .top-btn{
+    position: fixed;
+}
+
 /* end footer */
 
 /* start animation */
