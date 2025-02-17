@@ -260,7 +260,7 @@ a{
     justify-content: center;
     position: relative;
     z-index: 1;
-    animation: change-background 10s linear infinite;
+    animation: change-background 12s linear infinite;
     width: 100%;
     height: 95vh;
 }
