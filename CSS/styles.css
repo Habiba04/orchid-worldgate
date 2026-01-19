@@ -439,7 +439,7 @@ a{
     top: 0;
     width: 100%;
     height: 95vh;
-    background-color: rgb(0 51 102 / 70%);
+    background-color: rgb(158 158 158 / 62%);
     z-index: -1;
 }
 
@@ -462,6 +462,8 @@ a{
     font-size: 18px;
     max-width: 500px;
     padding-bottom: 30px;
+    color: #57575a;
+    font-weight: 600;
 }
 
 .landing .content a{
@@ -820,7 +822,7 @@ a{
 .gallery .imgs-container img {
     max-width: 100%;
     width: 100%;
-    height: 400px;
+    height: 330px;
     object-fit: cover;
     object-position: center;
     display: block;
