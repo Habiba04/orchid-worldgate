@@ -695,7 +695,6 @@ a{
 
 .services .srv-box{
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
