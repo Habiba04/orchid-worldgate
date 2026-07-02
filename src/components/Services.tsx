@@ -20,11 +20,11 @@ export default function Services() {
                                 <h3>{t("services.frozen.title")}</h3>
                                 <p>
                                     {/* <i className="fa-solid fa-chevron-right arrow"></i> */}
-                                    <FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />
+                                    <FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />
                                     {t("services.frozen.l1")}</p>
                                 <p>
                                     {/* <i className="fa-solid fa-chevron-right arrow"></i> */}
-                                    <FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />
+                                    <FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />
                                     {t("services.frozen.l2")}</p>
                             </div>
                         </div>
@@ -35,11 +35,11 @@ export default function Services() {
                                 <h3>{t("services.fresh.title")}</h3>
                                 <p>
                                     {/* <i className="fa-solid fa-chevron-right arrow"></i> */}
-                                    <FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />
+                                    <FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />
                                     {t("services.fresh.l1")}</p>
                                 <p>
                                     {/* <i className="fa-solid fa-chevron-right arrow"></i> */}
-                                    <FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />
+                                    <FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />
                                     {t("services.fresh.l2")}</p>
                             </div>
                         </div>
@@ -48,10 +48,10 @@ export default function Services() {
                             <FontAwesomeIcon icon={['fas', 'box-open']} />
                             <div className="text">
                                 <h3>{t("services.processed.title")}</h3>
-                                <p><FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />{t("services.processed.l1")}</p>
-                                <p><FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />{t("services.processed.l2")}</p>
-                                <p><FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />{t("services.processed.l3")}</p>
-                                <p><FontAwesomeIcon className="arrow" icon={['far', 'chevron-right']} />{t("services.processed.l4")}</p>
+                                <p><FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />{t("services.processed.l1")}</p>
+                                <p><FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />{t("services.processed.l2")}</p>
+                                <p><FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />{t("services.processed.l3")}</p>
+                                <p><FontAwesomeIcon className="arrow" icon={['fas', 'chevron-right']} />{t("services.processed.l4")}</p>
                             </div>
                         </div>
                         <div className="srv-box">
