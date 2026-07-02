@@ -770,7 +770,7 @@ a{
 
 }
 
-.support .support-box i{
+.support .support-box svg{
     margin-right: 50px;
     font-size: 40px;
     color: var(--main-color);

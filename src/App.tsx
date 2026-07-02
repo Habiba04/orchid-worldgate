@@ -8,7 +8,7 @@ import Vision from "./components/Vision";
 import AboutUs from "./components/AboutUs";
 import Mission from "./components/Mission";
 import Services from "./components/Services";
-// import Support from "./components/Support";
+import Support from "./components/Support";
 // import Brands from "./components/Brands";
 // import WhyUs from "./components/WhyUs";
 // import Values from "./components/Values";
@@ -35,8 +35,8 @@ function App() {
       <AboutUs />
       <Mission />
       <Services />
-      {/* <Support />
-      <Brands />
+      <Support />
+      {/*<Brands />
       <WhyUs />
       <Values />
       <Gallery />
