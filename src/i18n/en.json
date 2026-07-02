@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "about": "About",
+    "aboutUs": "About Us",
+    "vision": "Vision",
+    "mission": "Mission",
+    "values": "Values",
+    "whyUs": "Why Choose Us",
+    "services": "Services",
+    "support": "Support",
+    "gallery": "Gallery",
+    "brands": "Brands",
+    "contact": "Contact"
+  },
+  "landing": {
+    "tagline": "Your trusted platform for seamless and transparent trade.",
+    "cta": "Get Started"
+  },
+  "explore": {
+    "title": "Explore",
+    "about": { "title": "About Us", "desc": "Learn more about our dedicated company and our core values.", "more": "More" },
+    "services": { "title": "Services", "desc": "Learn more about our services and how we can help you.", "more": "More" },
+    "gallery": { "title": "Gallery", "desc": "See our gallery of high-quality agricultural products.", "more": "More" },
+    "contact": { "title": "Contact", "desc": "Get in touch with us for any inquiries, questions, or feedback.", "more": "More" }
+  },
+  "vision": {
+    "quote": "Our vision is To be a World-Gate for exceptional Egyptian products, transforming untapped potential into international success stories. Empowering producers to compete on the world stage and strengthening Egypt's reputation as a source of quality, authentic, and sustainable exports.",
+    "signature": "-Orchid World Gate."
+  },
+  "mission": {
+    "quote": "Our mission is To strengthen the global reach of Egyptian products by delivering integrated export solutions that combine market intelligence, branding, supply chain expertise and strategic partnerships, building on international trade agreements and facilitation between Egypt and the world to contribute to the economic welfare and success for producers and stakeholders.",
+    "signature": "-Orchid World Gate."
+  },
+  "about": {
+    "title": "About Us",
+    "p1": "We are a fully integrated grower, producer and exporter of fresh, frozen (IQF) fruits and vegetables, and processed food.",
+    "p2": "We grow our crops in-house under strict quality control, then manage the freezing and processing stages internally to ensure full traceability and compliance with global standards."
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "With a strong commitment to quality and reliability. We aim to represent the best of Egyptian agricultural and food products around the world.",
+    "frozen": {
+      "title": "Export of Frozen Vegetables and Fruits",
+      "l1": "Vegetables: Broccoli, Cauliflower, Green Peas, Beans, Okra, Molokhia, Artichokes, Grilled Eggplant, Mixed Vegetables (Mexican Mix), Frozen French Fries.",
+      "l2": "Fruits: Mango, Strawberries."
+    },
+    "fresh": {
+      "title": "Export of Fresh Vegetables and Fruits",
+      "l1": "Vegetables: Green Peas, Green Beans, Mini Cucumber, Fresh Garlic, Dry onions, Spring Onions, Baby potatoes.",
+      "l2": "Fruits: Grapes, Mango, Dates, Pomegranate, Asparagus, Strawberry, Watermelon, Melon."
+    },
+    "processed": {
+      "title": "Export of Processed Food Products",
+      "l1": "Pasta (various shapes and sizes)",
+      "l2": "Tomato Paste (retail and industrial concentrations)",
+      "l3": "Flour (high-grade bakery and industrial applications)",
+      "l4": "Canned Tuna (Solid and chunks, available in all standard retail and food-service sizes)"
+    },
+    "brand": {
+      "title": "Private Label and Brand Partnerships",
+      "l1": "We help international partners expand their product range through our ( World Gate Select ) private label program or by exporting under their own brands."
+    }
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "We are committed to providing excellent customer service and ensuring that your needs are met.",
+    "export": {
+      "title": "Support for Export of Vegetables and Fruits",
+      "l1": "End-to-end export management—from sourcing to shipment.",
+      "l2": "Shelf-life testing, cold chain optimization, and export documentation.",
+      "l3": "International packaging compliance and private label options.",
+      "l4": "Customs coordination and timely logistics execution.",
+      "l5": "Product selection and factory audits for compliance with global standards.",
+      "l6": "Customized export documentation and labeling.",
+      "l7": "Packaging adaptation for target markets.",
+      "l8": "Full logistics management ensuring consistent and safe delivery."
+    },
+    "brand": {
+      "title": "Support for Private Label and Brand Partnerships",
+      "l1": "Market research and product matching.",
+      "l2": "Packaging design and brand localization.",
+      "l3": "Certification support (ISO, HACCP, Halal, Global GAP, BRC).",
+      "l4": "Strategic export planning and long-term supply agreements."
+    }
+  },
+  "brands": {
+    "title": "Our Brands"
+  },
+  "whyUs": {
+    "title": "Why Choose Us?",
+    "subtitle": "We transform Egypt's agricultural potential into global success by combining a certified sourcing network with end-to-end export expertise. Our integrated solutions ensure quality, traceability, and tailored branding for international markets.",
+    "sourcing": { "title": "Trusted Sourcing Network", "desc": "Specialized Egyptian export company delivering premium fresh and frozen produce alongside processed food products to global markets with an unwavering commitment to quality and reliability." },
+    "expertise": { "title": "End to End Export Expertise", "desc": "From international compliance and rigorous quality control to final delivery, our expert team meticulously handles every complex step of the supply chain to ensure a seamless export experience for you." },
+    "access": { "title": "Global Market Access", "desc": "We have established extensive worldwide partnerships and a formidable international presence, strategically transforming Egypt's untapped agricultural potential into sustainable success stories across the most competitive global food markets today." },
+    "integrity": { "title": "Reliable Integrity", "desc": "Our consistent operational performance and transparent communication protocols are designed to build lasting trust, ensuring we always honor our professional commitments and foster long-term confidence with all our stakeholders." },
+    "tailored": { "title": "Tailored Solutions", "desc": "We provide highly flexible branding, specialized packaging, and optimized logistics options for each specific market, aligning our integrated export solutions with your unique business needs to maximize long-term value." }
+  },
+  "values": {
+    "title": "Our Values",
+    "subtitle": "With a strong commitment to quality and reliability. We aim to represent the best of Egyptian agricultural and food products around the world.",
+    "trust": { "title": "Trustworthiness", "desc": "We uphold reliability, responsibility, and integrity in all our actions, ensuring that we consistently honor our commitments and build lasting confidence with all stakeholders." },
+    "pioneering": { "title": "Pioneering Spirit", "desc": "We embrace innovation and a forward-looking mindset, proactively addressing challenges, exploring new markets, and developing groundbreaking solutions to maintain our competitive edge." },
+    "agility": { "title": "Agility", "desc": "We operate with speed and adaptability, swiftly responding to evolving internal and external conditions by reallocating resources, pivoting strategies, and sustaining operational efficiency." },
+    "customer": { "title": "Customer Centric", "desc": "We place our clients at the center of everything we do, aligning product development and service delivery with their needs to maximize satisfaction, loyalty, and long-term value." },
+    "ownership": { "title": "Ownership", "desc": "We take personal and collective responsibility for our decisions and outcomes, fostering a culture of accountability, proactiveness, and dedication to achieving our organizational goals." },
+    "community": { "title": "Community Stewardship", "desc": "We act as responsible corporate citizens, committed to positively impacting society and safeguarding the environment at both local and global levels." }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Our mission is To strengthen the global reach of Egyptian products by delivering integrated export solutions that combine market intelligence, branding, supply chain expertise and strategic partnerships, building on international trade agreements and facilitation between Egypt and the world to contribute to the economic welfare and success for producers and stakeholders.",
+    "filters": { "all": "All", "fresh": "Fresh Food", "frozen": "Frozen Food", "processed": "Processed Food", "real-life": "On-Site" },
+    "seeMore": "See More",
+    "seeLess": "See Less"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "For any inquiries please feel free to contact us on our MAIL.",
+    "or": "Or"
+  },
+  "footer": {
+    "address": "Main office: Building 3, Rihana Residence, Zahraa ElMaadi - Cairo - Egypt.",
+    "hours": "Business Hours: From 09:00 To 17:00",
+    "copyright": "© Orchid World Gate Trading. All Rights Reserved",
+    "goToExplore": "Go to Explore",
+    "goToFooter": "Go to Footer"
+  },
+  "lang": {
+    "switchTo": "العربية"
+  }
+}

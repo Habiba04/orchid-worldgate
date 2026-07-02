@@ -1,0 +1,53 @@
+/*
+  RTL overrides.
+  These sit ON TOP of styles.css (which is untouched) and only flip the
+  handful of direction-sensitive rules: text alignment and icons that
+  visually "point" a direction. Everything else (colors, spacing, layout
+  structure, animations) is inherited as-is from the original design.
+*/
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .main-nav > li > .mega-menu-head {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .mega-menu .links {
+  text-align: right;
+}
+
+/* directional chevrons / arrows should mirror in RTL */
+html[dir="rtl"] .arrow,
+html[dir="rtl"] .fa-chevron-right {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+html[dir="rtl"] .top-btn i,
+html[dir="rtl"] .down-btn i {
+  transform: none; /* up/down chevrons stay as-is */
+}
+
+html[dir="rtl"] .services-container .srv-box .text p .arrow,
+html[dir="rtl"] .support-container .support-box .text p .arrow {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir="rtl"] .line {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+html[dir="rtl"] .footer .box .links,
+html[dir="rtl"] .footer .box .social {
+  text-align: right;
+}
+
+/* keep font legible for Arabic (Cairo font already loaded in index.html) */
+html[dir="rtl"] body {
+  font-family: "Cairo", "Open Sans", "Work Sans", sans-serif;
+}
