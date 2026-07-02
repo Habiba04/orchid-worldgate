@@ -748,7 +748,7 @@ a{
 
 /* end services */
 
-/* start services */
+/* start support */
 
 .support{
     padding-top: var(--section-padding);
@@ -771,7 +771,8 @@ a{
 }
 
 .support .support-box svg{
-    margin-right: 50px;
+    margin-right: 10px;
+    margin-left: 10px;
     font-size: 40px;
     color: var(--main-color);
 }
@@ -804,7 +805,7 @@ a{
     font-size: 15px;
 }
 
-/* end services */
+/* end support */
 
 /* start gallery */
 
@@ -1001,8 +1002,9 @@ a{
 
 }
 
-.about .abt-box i{
+.about .abt-box svg{
     margin-right: 50px;
+    margin-left: 50px;
     font-size: 40px;
     color: var(--main-color);
 }
@@ -1081,8 +1083,9 @@ a{
 
 }
 
-.values .values-box i{
+.values .values-box svg{
     margin-right: 50px;
+    margin-left: 50px;
     font-size: 40px;
     color: var(--main-color);
 }
@@ -1179,75 +1182,96 @@ a{
 
 /* start footer */
 
-.footer{
+.footer {
     background-color: #191919;
     padding: 70px 0 0;
 }
 
 @media (max-width: 767px) {
-    .footer{
+    .footer {
         text-align: center;
     }
 }
 
-.footer .container{
+.footer .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
 }
 
-.footer .box .img{
+.footer .box .img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.footer .box .img img{
+.footer .box .img img {
     width: 300px;
 }
 
-.footer .box h3{
+.footer .box h3 {
     color: white;
     font-size: 50px;
     margin: 0 0 20px;
 }
 
-.footer .box .text{
+.footer .box .text {
     line-height: 2;
     color: #b9b9b9;
 }
 
-.footer .box .links li{
+.footer .box .links li {
     padding: 15px 0;
-    transition: var(--main-transition);
+    transition: padding var(--main-transition);
 }
 
-.footer .box .links li:not(:last-child){
+.footer .box .links li:not(:last-child) {
     border-bottom: 1px solid #444;
 }
 
-.footer .box .links li:hover{
-    padding-left: 10px;
+/* Fixes list hover shift for both LTR and RTL dynamically */
+.footer .box .links li:hover {
+    padding-inline-start: 10px;
 }
 
-.footer .box .links li:hover a{
+.footer .box .links li:hover a {
     color: white;
 }
 
-.footer .box .links li a{
+.footer .box .links li a {
     color: #b9b9b9;
+    display: inline-flex; /* Ensures text and SVG sit perfectly inline */
+    align-items: center;
     transition: var(--main-transition);
 }
 
-.footer .box .links li a::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\F101";
-    font-weight: 900;
-    margin-right: 10px;
+/* REMOVED the legacy ::before font rule completely to clean up memory bloat */
+
+/* Style the new React SVG arrows inside your links */
+.footer .box .links li a .footer-link-arrow {
     color: var(--main-color);
+    width: 12px !important;  /* Force dimensions directly onto SVG */
+    height: 12px !important;
+    display: inline-block !important;
+    
+    /* Using logical property so spacing mirrors automatically in Arabic */
+    margin-inline-end: 10px; 
+    
+    /* Animate changes smoothly */
+    transition: transform var(--main-transition) ease;
 }
 
-.footer .box .line{
+/* Nudges the arrow forward depending on global body direction context */
+.footer .box .links li:hover a .footer-link-arrow {
+    transform: translateX(5px);
+}
+
+body[dir="rtl"] .footer .box .links li:hover a .footer-link-arrow {
+    transform: translateX(-5px);
+}
+
+/* FIX: Refactored the Contact Line items layout to be RTL friendly */
+.footer .box .line {
     display: flex;
     align-items: center;
     color: #b9b9b9;
@@ -1255,49 +1279,51 @@ a{
 }
 
 @media (max-width: 767px) {
-    .footer .box .line{
+    .footer .box .line {
         flex-direction: column;
     }
 }
 
-.footer .box .line i{
+/* Target the FontAwesome package components inside your layout fields cleanly */
+.footer .box .line svg {
     font-size: 25px;
     color: var(--main-color);
-    margin-right: 10px;
+    /* Swapped physical margins for logical margins to move the icon automatically */
+    margin-inline-end: 15px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 767px) {
-    .footer .box .line i{
-        margin-right: 0;
+    .footer .box .line svg {
+        margin-inline-end: 0;
         margin-bottom: 15px;
     }
 }
 
-.footer .box .line .info{
+.footer .box .line .info {
     line-height: 1.7;
     flex: 1;
 }
 
-.footer .box .line .info span{
+.footer .box .line .info span {
     display: block;
 }
 
-
-.footer .box .social{
+.footer .box .social {
     display: flex;
 }
 
 @media (max-width: 767px) {
-    .footer .box .social{
+    .footer .box .social {
         justify-content: center;
     }
 }
 
-.footer .box .social li{
-    margin-right: 10px;
+.footer .box .social li {
+    margin-inline-end: 10px; /* Logical margin */
 }
 
-.footer .box .social li a{
+.footer .box .social li a {
     background-color: #313131;
     color: #b9b9b9;
     display: inline-flex;
@@ -1309,25 +1335,25 @@ a{
     transition: var(--main-transition);
 }
 
-.footer .box .social .facebook:hover{
+.footer .box .social .facebook:hover {
     background-color: #1877f2;
 }
 
-.footer .box .social .instagram:hover{
+.footer .box .social .instagram:hover {
     background-color: #c13584;
 }
 
-.footer .box .social .linkedin:hover{
+.footer .box .social .linkedin:hover {
     background-color: #38434f;
 }
 
-.footer .footer-gallery img{
+.footer .footer-gallery img {
     width: 78px;
     border: 3px solid white;
     margin: 2px;
 }
 
-.footer .copyright{
+.footer .copyright {
     padding: 25px 0;
     text-align: center;
     color: white;
@@ -1335,9 +1361,10 @@ a{
     border-top: 1px solid #444;
 }
 
-.footer .top-to-bot{
+.footer .top-to-bot {
     position: fixed;
-    right: 16px;
+    /* Uses modern logical position to auto-mirror the floating toggle widget */
+    inset-inline-end: 16px;
     bottom: 16px;
     z-index: 99999;
     cursor: pointer;
@@ -1348,12 +1375,12 @@ a{
     opacity: 0.5;
 }
 
-.footer .top-to-bot i{
+.footer .top-to-bot svg {
     color: white;
 }
 
 .footer .top-btn,
-.footer .down-btn{
+.footer .down-btn {
     width: 32px;
     height: 32px;
     display: flex;

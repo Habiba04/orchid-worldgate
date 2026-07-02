@@ -9,12 +9,12 @@ import AboutUs from "./components/AboutUs";
 import Mission from "./components/Mission";
 import Services from "./components/Services";
 import Support from "./components/Support";
-// import Brands from "./components/Brands";
-// import WhyUs from "./components/WhyUs";
-// import Values from "./components/Values";
-// import Gallery from "./components/Gallery";
-// import Contact from "./components/Contact";
-// import Footer from "./components/Footer";
+import Brands from "./components/Brands";
+import WhyUs from "./components/WhyUs";
+import Values from "./components/Values";
+import Gallery from "./components/Gallery/Gallery";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const { isRTL } = useLanguageDirection();
@@ -36,12 +36,12 @@ function App() {
       <Mission />
       <Services />
       <Support />
-      {/*<Brands />
+      <Brands />
       <WhyUs />
       <Values />
       <Gallery />
       <Contact />
-      <Footer /> */}
+      <Footer />
     </ConfigProvider>
   );
 }
