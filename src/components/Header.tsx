@@ -12,14 +12,30 @@ export default function Header() {
     return (
         <div className="header" id="header">
             <div className="container">
-                <a href="#" className="logo">
-                    <img loading="lazy" src="/assets/horizental.PNG" alt="Logo" />
-                </a>
+                {/* Brand Identity Group Wrapper */}
+                <div className="logo-group" style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+                    <a href="#" className="logo">
+                        <img loading="lazy" src="/assets/horizental.PNG" alt="Logo" />
+                    </a>
+                    
+                    {/* Language Toggler resides safely here on mobile viewports */}
+                    <div className="lang-switch-desktop">
+                        <Segmented
+                            size="small"
+                            value={i18n.language}
+                            onChange={toggleLanguage}
+                            options={[
+                                { label: "EN", value: "en" },
+                                { label: "AR", value: "ar" },
+                            ]}
+                        />
+                    </div>
+                </div>
+
                 <ul className="main-nav">
                     <li>
                         <div className="mega-menu-head">
                             <a href="#about">{t("nav.about")}</a>
-                            {/* <i className="fa-solid fa-chevron-down"></i> */}
                             <FontAwesomeIcon icon={['fas', 'chevron-down']} />
                         </div>
                         <div className="mega-menu">
@@ -35,7 +51,6 @@ export default function Header() {
                     <li>
                         <div className="mega-menu-head">
                             <a href="#services">{t("nav.services")}</a>
-                            {/* <i className="fa-solid fa-chevron-down"></i> */}
                             <FontAwesomeIcon icon={['fas', 'chevron-down']} />
                         </div>
                         <div className="mega-menu">
@@ -48,17 +63,6 @@ export default function Header() {
                     <li><a href="#gallery">{t("nav.gallery")}</a></li>
                     <li><a href="#brands">{t("nav.brands")}</a></li>
                     <li><a href="#contact">{t("nav.contact")}</a></li>
-                    <li className="lang-switch" style={{ display: "flex", alignItems: "center" }}>
-                        <Segmented
-                            size="small"
-                            value={i18n.language}
-                            onChange={toggleLanguage}
-                            options={[
-                                { label: "EN", value: "en" },
-                                { label: "AR", value: "ar" },
-                            ]}
-                        />
-                    </li>
                 </ul>
             </div>
         </div>
