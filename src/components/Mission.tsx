@@ -7,7 +7,7 @@ export default function Mission() {
         <div className="vision">
             <div className="container">
                 <q>{t("mission.quote")}</q>
-                <span>{t("mission.signature")}</span>
+                <span dir="ltr">- Orchid World Gate</span>
             </div>
         </div>
     );

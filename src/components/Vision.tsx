@@ -7,7 +7,7 @@ export default function Vision() {
         <div className="vision">
             <div className="container">
                 <q>{t("vision.quote")}</q>
-                <span>{t("vision.signature")}</span>
+                <span dir="ltr">- Orchid World Gate</span>
             </div>
         </div>
     );
