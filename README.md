@@ -119,7 +119,7 @@ and adjust.
 
 ```
 ├── index.html
-├── .env                          # your Cloudinary cloud name (gitignored)
+├── .env                          # Cloudinary cloud name (gitignored)
 ├── .gitignore
 ├── .hintrc
 ├── package.json
@@ -162,7 +162,7 @@ and adjust.
     ├── CSS/
     │   ├── fontawesome.ts
     │   ├── normalize.css          # unchanged
-    │   ├── styles.css             # unchanged — your original design
+    │   ├── styles.css             # unchanged — original design
     │   └── rtl.css                # additive RTL overrides only
     ├── Hook/
     │   └── useLanguageDirection.ts
