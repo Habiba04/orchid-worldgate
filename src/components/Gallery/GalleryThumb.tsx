@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Skeleton } from "antd";
+import { cld, cldSrcSet } from "./../../utils/cloudinary";
 
 interface GalleryThumbProps {
-    src: string;
+    /** Cloudinary path, e.g. "owg/gallery/Fresh/pomegranate.png" */
+    path: string;
     alt: string;
     className: string;
 }
 
-export default function GalleryThumb({ src, alt, className }: GalleryThumbProps) {
+export default function GalleryThumb({ path, alt, className }: GalleryThumbProps) {
     const [loaded, setLoaded] = useState(false);
 
     return (
@@ -25,7 +27,9 @@ export default function GalleryThumb({ src, alt, className }: GalleryThumbProps)
             )}
             <img
                 loading="lazy"
-                src={src}
+                src={cld(path, { width: 800 })}
+                srcSet={cldSrcSet(path, [400, 800, 1200])}
+                sizes="(max-width: 768px) 50vw, 25vw"
                 alt={alt}
                 onLoad={() => setLoaded(true)}
                 style={{
