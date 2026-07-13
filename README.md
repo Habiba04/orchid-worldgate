@@ -36,66 +36,57 @@ npm run build
 npm run preview
 ```
 
-## Images: hosted on Cloudinary
+## Images: gallery hosted on Cloudinary, everything else local
 
-Most images (logos, explore thumbnails, brand logos, gallery photos) are now
-served through [Cloudinary](https://cloudinary.com), which auto-picks the best
-format (WebP/AVIF) and quality for each visitor, and resizes on the fly —
-no manual compressing or exporting multiple sizes needed.
+Only the **gallery** (the largest, highest-traffic set of images — 60+ photos)
+is served through [Cloudinary](https://cloudinary.com). Everything else
+(logos, explore thumbnails, brand logos, footer logo, CSS background images)
+stays as regular local files in `public/assets/`, same as the original site.
+This is where Cloudinary's `f_auto,q_auto` (auto format + quality) and
+responsive `srcset` add the most value anyway, since it's by far the heaviest
+set of images on the page.
 
 **Setup:**
 
 1. Create a free Cloudinary account and copy your **Cloud name** from the Dashboard.
-2. In Cloudinary's Media Library, recreate this folder structure and upload the
-   matching files from your old `assets/` folder:
-
-   ```
-   owg/
-     logo.PNG, OWG_logo.PNG, horizental.PNG
-     explore/about.jpeg, services.jpeg, gallery.jpeg, contact.jpeg
-     Brands/Spark_fresh_logo.png, Spark_gardens_logo.png
-     gallery/Fresh/...   gallery/Frozen/...   gallery/Processed/...   gallery/Real/...
-   ```
-
-3. Copy `.env.example` to `.env` and set your cloud name:
+2. Copy `.env.example` to `.env` and set:
 
    ```
    VITE_CLOUDINARY_CLOUD_NAME=your-cloud-name
    ```
 
-4. Restart `npm run dev` after adding `.env` (Vite only reads it on start).
+3. Restart `npm run dev` after adding `.env` (Vite only reads it on start).
+
+Your gallery images are expected on Cloudinary under:
+
+```
+OWG/Gallery/
+  Fresh/...
+  Frozen/...
+  Processed/...
+  Real/...
+```
+
+(matching the folders you already uploaded — there's also an `Extra` folder
+kept in reserve, not currently wired into the gallery filters).
 
 All Cloudinary URLs are built through one small helper: `src/utils/cloudinary.ts`
-(`cld()` for a single optimized URL, `cldSrcSet()` for responsive `srcset`s used
-in the gallery). If you ever rename a folder in Cloudinary, that's the one place
-to check paths against.
+(`cld()` for a single optimized URL, `cldSrcSet()` for the responsive `srcset`
+used in `GalleryThumb.tsx`). Nothing else in the codebase touches Cloudinary.
 
-**Favicons** (`our_color_logo.PNG`, `OWG_logo.PNG` referenced in `index.html`'s
-`<head>`) were left as local files — they're tiny and loaded before your JS
-runs, so Cloudinary doesn't add value there.
+## Important: add your remaining images locally
 
-**CSS background images** (the landing hero's shuffling background, the vision
-section background, the about section background — all defined via
-`background-image: url(...)` in `styles.css`) were also kept local, since plain
-CSS can't read the `VITE_CLOUDINARY_CLOUD_NAME` env variable the way
-JavaScript can. These are a handful of decorative images, so the perf win from
-Cloudinary is small here — but if you want them on Cloudinary too later, it's
-a quick follow-up (setting CSS custom properties from JS, or a tiny Vite
-plugin to substitute the URL at build time). Just say the word.
-
-So `public/assets/` only needs these local files:
+Copy your existing `assets/` folder (minus the gallery, which now lives on
+Cloudinary) into:
 
 ```
 public/assets/
-  our_color_logo.PNG
-  OWG_logo.PNG
-  vision.jpeg
-  about.png
-  landing/shuffle1.jpeg ... shuffle6.jpg
 ```
 
-Everything else (gallery photos, explore thumbnails, brand logos, the main
-logo, footer logo) comes from Cloudinary.
+so paths like `/assets/logo.PNG`, `/assets/explore/about.jpeg`,
+`/assets/Brands/Spark_fresh_logo.png`, and the CSS background images
+(`/assets/landing/shuffle1.jpeg`, `/assets/vision.jpeg`, `/assets/about.png`)
+resolve exactly like they did before.
 
 ## Editing text / translations
 
@@ -127,21 +118,60 @@ and adjust.
 ## Project structure
 
 ```
-├── index.html                  # Vite entry (favicon links + Cloudinary preloads)
-├── .env.example                 # copy to .env, add your Cloudinary cloud name
+├── index.html
+├── .env                          # Cloudinary cloud name (gitignored)
+├── .gitignore
+├── .hintrc
+├── package.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
 ├── public/
-│   ├── css/all.min.css         # Font Awesome, copied as-is
-│   └── assets/                 # only the 2 favicon files go here now
-├── src/
-│   ├── main.tsx                # app bootstrap + stylesheet imports
-│   ├── App.tsx                 # renders all sections inside ConfigProvider
-│   ├── components/              # one component per section
-│   ├── data/galleryImages.ts   # gallery image list (Cloudinary paths)
-│   ├── hooks/useLanguageDirection.ts
-│   ├── i18n/                   # en.json, ar.json, i18next setup
-│   ├── utils/cloudinary.ts     # cld() / cldSrcSet() URL builders
-│   └── styles/
-│       ├── normalize.css       # unchanged
-│       ├── styles.css          # unchanged — your original design
-│       └── rtl.css             # additive RTL overrides only
+│   └── assets/
+│       ├── Brands/
+│       ├── explore/
+│       ├── about.png
+│       ├── horizental.PNG
+│       ├── logo.PNG
+│       ├── OWG_logo.PNG
+│       └── vision.jpeg
+└── src/
+    ├── main.tsx                   # app bootstrap, stylesheet imports, landing bg injector
+    ├── App.tsx / App.css
+    ├── index.css
+    ├── vite-env.d.ts
+    ├── assets/
+    ├── components/
+    │   ├── Gallery/
+    │   │   ├── Gallery.tsx
+    │   │   ├── galleryImages.ts   # Cloudinary paths
+    │   │   └── GalleryThumb.tsx
+    │   ├── AboutUs.tsx
+    │   ├── Brands.tsx
+    │   ├── Contact.tsx
+    │   ├── Explore.tsx
+    │   ├── Footer.tsx
+    │   ├── Header.tsx
+    │   ├── Landing.tsx
+    │   ├── Mission.tsx
+    │   ├── Services.tsx
+    │   ├── Support.tsx
+    │   ├── Values.tsx
+    │   ├── Vision.tsx
+    │   └── WhyUs.tsx
+    ├── CSS/
+    │   ├── fontawesome.ts
+    │   ├── normalize.css          # unchanged
+    │   ├── styles.css             # unchanged — original design
+    │   └── rtl.css                # additive RTL overrides only
+    ├── Hook/
+    │   └── useLanguageDirection.ts
+    ├── i18n/
+    │   ├── en.json
+    │   ├── ar.json
+    │   └── index.ts
+    └── utils/
+        ├── cloudinary.ts                    # cld() / cldSrcSet() URL builders
+        └── cloudinaryLandingBackground.ts   # injects hero bg keyframes
+
 ```
