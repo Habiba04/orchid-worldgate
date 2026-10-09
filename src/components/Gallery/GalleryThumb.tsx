@@ -34,7 +34,7 @@ export default function GalleryThumb({ path, alt, className }: GalleryThumbProps
                 onLoad={() => setLoaded(true)}
                 style={{
                     opacity: loaded ? 1 : 0,
-                    transition: "opacity 0.3s ease",
+                    transition: "opacity 0.3s ease, transform 0.4s ease-out",
                     width: "100%",
                     height: "100%",
                     display: "block",
